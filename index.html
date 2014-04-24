@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="lib/jquery-latest.js"></script>
+    <script src="lib/jquery.csvToTable.js"></script>
+    <script src="lib/jquery.tablesorter.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){ 
+      $('#csvtable').CSVToTable('clist.csv', 
+      { 
+      loadingImage: 'img/loading.gif', 
+      }
+      ).bind("loadComplete",function() { 
+      $('#csvtable').find('TABLE').addClass("tablesorter");
+      $('#csvtable').find('TABLE').tablesorter();
+      });
+      });
+    </script>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <title>Conference List</title></head>
+  <body style="background-color:#EEEEEE;">
+    <h1> Conference List</h1>
+    <div id="csvtable"></div>
+  </body>
+</html>
